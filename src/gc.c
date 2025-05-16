@@ -1,4 +1,4 @@
-#include "gc.h"
+#include "include/gc.h"
 
 // Global statistics
 static size_t total_allocations = 0;
@@ -80,4 +80,17 @@ void gc_print_stats(GCObject* obj) {
     printf("  Total allocations: %zu\n", total_allocations);
     printf("  Total frees: %zu\n", total_frees);
     printf("  Live objects: %zu\n", live_objects);
+}
+
+// Getter functions for statistics
+size_t gc_get_total_allocations(void) {
+    return total_allocations;
+}
+
+size_t gc_get_total_frees(void) {
+    return total_frees;
+}
+
+size_t gc_get_live_objects(void) {
+    return live_objects;
 }

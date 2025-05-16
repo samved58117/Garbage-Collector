@@ -28,4 +28,9 @@ void* gc_get_data(GCObject* obj);
 // Debug utility
 void gc_print_stats(GCObject* obj);
 
+// Statistics getters
+size_t gc_get_total_allocations(void);
+size_t gc_get_total_frees(void);
+size_t gc_get_live_objects(void);
+
 #endif // GC_H

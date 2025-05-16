@@ -1,4 +1,4 @@
-#include "gc.h"
+#include "include/gc.h"
 
 // Declare external variables
 extern size_t total_allocations;
@@ -69,9 +69,9 @@ int main() {
     gc_decref(str2);
     
     printf("\nFinal global statistics:\n");
-    printf("  Total allocations: %zu\n", total_allocations);
-    printf("  Total frees: %zu\n", total_frees);
-    printf("  Live objects: %zu\n", live_objects);
+    printf("  Total allocations: %zu\n", gc_get_total_allocations());
+    printf("  Total frees: %zu\n", gc_get_total_frees());
+    printf("  Live objects: %zu\n", gc_get_live_objects());
     
     return 0;
 }
